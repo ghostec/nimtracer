@@ -2,9 +2,7 @@ import strutils
 
 type
   Pixel* = object
-    r*: uint8
-    g*: uint8
-    b*: uint8
+    r*, g*, b*: uint8
 
   Canvas* = object
     width: int
@@ -14,25 +12,25 @@ type
 proc newCanvas*(width, height: int): Canvas =
   Canvas(width: width, height: height, pixels: newSeq[Pixel](width * height))
 
-proc `[]`*(p: Pixel, i: int): uint8 =
+proc `[]`*(p: Pixel, i: int): uint8 {.inline.} =
   result = case i:
     of 0: p.r
     of 1: p.g
     of 2: p.b
     else: 0
 
-proc `[]=`*(p: var Pixel, i: int, v: uint8) =
+proc `[]=`*(p: var Pixel, i: int, v: uint8) {.inline.} =
   case i:
     of 0: p.r = v
     of 1: p.g = v
     of 2: p.b = v
     else: discard
 
-proc get*(c: Canvas, i, j: int): Pixel =
+proc get*(c: Canvas, i, j: int): Pixel {.inline.} =
   # TODO: handle i > height and j > width
   result = c.pixels[i * c.width + j]
 
-proc set*(c: var Canvas, i, j: int, p: Pixel) =
+proc set*(c: var Canvas, i, j: int, p: Pixel) {.inline.} =
   c.pixels[i * c.width + j] = p
 
 # Pixel's PPM format

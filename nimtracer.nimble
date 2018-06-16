@@ -8,7 +8,9 @@ srcDir        = "src"
 binDir        = "bin"
 bin           = @["nimtracer"]
 
+task test, "Runs the test suite":
+  exec "nim c -r tests/tmath.nim"
+
 # Dependencies
 
-requires "nim >= 0.18.0"
-requires "websocket >= 0.3.1"
+requires "nim >= 0.18.0", "websocket >= 0.3.1"
