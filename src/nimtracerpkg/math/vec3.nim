@@ -4,6 +4,9 @@ type
   Vec3*[T] = object
     x*, y*, z*: T
 
+proc newVec3*[T](x, y, z: T): Vec3[T] =
+  result = Vec3[T](x: x, y: y, z: z)
+
 proc `+`*[T](v1, v2: Vec3[T]): Vec3[T] {.inline.} =
   result = Vec3[T](x: v1.x + v2.x, y: v1.y + v2.y, z: v1.z + v2.z)
 

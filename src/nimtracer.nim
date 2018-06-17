@@ -1,5 +1,5 @@
-import nimtracerpkg/ws, nimtracerpkg/canvas
+import nimtracerpkg/http/server, nimtracerpkg/canvas
 
 echo("testing")
 
-discard ws.serve()
+discard server.serve()

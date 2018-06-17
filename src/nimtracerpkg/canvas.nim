@@ -12,6 +12,12 @@ type
 proc newCanvas*(width, height: int): Canvas =
   Canvas(width: width, height: height, pixels: newSeq[Pixel](width * height))
 
+proc newPixel*(r, g, b: uint8): Pixel =
+  result = Pixel(r: r, g: g, b: b)
+
+proc width*(c: Canvas): int {.inline.} = c.width
+proc height*(c: Canvas): int {.inline.}= c.height
+
 proc `[]`*(p: Pixel, i: int): uint8 {.inline.} =
   result = case i:
     of 0: p.r

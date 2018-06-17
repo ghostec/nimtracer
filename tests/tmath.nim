@@ -14,7 +14,7 @@ suite "canvas types":
     check(p.r == p[0])
     check(p.g == p[1])
     check(p.b == p[2])
-    p[2] = cast[uint8](77)
+    p[2] = uint8(77)
     check(p.b == 77)
   
   echo "suite teardown: run once after the tests"
