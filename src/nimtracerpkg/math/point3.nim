@@ -4,6 +4,9 @@ type
   Point3*[T] = object
     x*, y*, z*:  T
 
+proc newPoint3*[T](x, y, z: T): Point3[T] =
+  result = Point3[T](x: x, y: y, z: z)
+
 proc `+`*[T](p: Point3[T], v: Vec3[T]): Point3[T] {.inline.} =
   result = Point3[T](x: p.x + v.x, y: p.y + v.y, z: p.z + v.z)
 

@@ -9,8 +9,8 @@ binDir        = "bin"
 bin           = @["nimtracer"]
 
 task test, "Runs the test suite":
-  # exec "nim c -r tests/tmath.nim"
-  # exec "nim c -r tests/tpoint3.nim"
+  exec "nim c -r tests/tmath.nim"
+  exec "nim c -r tests/tpoint3.nim"
   exec "nim c -r tests/tray.nim"
 
 # Dependencies

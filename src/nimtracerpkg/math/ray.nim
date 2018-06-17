@@ -1,7 +1,7 @@
 import ./vec3, ./point3
 
 type
-  Ray[T] = object
+  Ray*[T] = object
     origin: Point3[T]
     direction: Vec3[T]
 
