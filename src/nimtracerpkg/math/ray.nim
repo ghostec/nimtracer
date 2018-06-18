@@ -1,13 +1,13 @@
 import ./vec3, ./point3
 
 type
-  Ray*[T] = object
-    origin: Point3[T]
-    direction: Vec3[T]
+  Ray* = object
+    origin: Point3[float64]
+    direction: Vec3[float64]
 
-proc newRay*[T](origin: Point3[T], direction: Vec3[T]): Ray[T] {.inline.} =
-  result = Ray[T](origin: origin, direction: direction.unit)
+proc newRay*(origin: Point3[float64], direction: Vec3[float64]): Ray {.inline.} =
+  result = Ray(origin: origin, direction: direction.unit)
 
-proc origin*[T](r: Ray[T]): Point3[T] {.inline.} = r.origin
-proc direction*[T](r: Ray[T]): Vec3[T] {.inline.} = r.direction
-proc at*[T](r: Ray[T], t: T): Point3[T] {.inline.} = r.origin + t * r.direction
+proc origin*(r: Ray): Point3[float64] {.inline.} = r.origin
+proc direction*(r: Ray): Vec3[float64] {.inline.} = r.direction
+proc at*[T](r: Ray, t: T): Point3[float64] {.inline.} = r.origin + t * r.direction

@@ -54,8 +54,8 @@ suite "Vec3":
   test "dot":
     var v1 = Vec3[int](x: 2, y: 1, z: 0)
     const v2 = Vec3[int](x: 3, y: 2, z: 4)
-    check(dot(v1, v2) == 6 + 3 + 0)
-    check(v1.dot(v2) == 6 + 3 + 0)
+    check(dot(v1, v2) == 6 + 2 + 0)
+    check(v1.dot(v2) == 6 + 2 + 0)
 
   test "cross":
     const v1 = Vec3[int](x: 2, y: 1, z: 3)

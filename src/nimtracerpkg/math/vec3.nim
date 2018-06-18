@@ -47,7 +47,7 @@ proc `/=`*[T](v1: var Vec3[T], v: T) {.inline.} =
   discard
 
 proc `dot`*[T](v1, v2: Vec3[T]): T {.inline.} =
-  result = v1.x * v2.x + v1.y + v2.y + v1.z * v2.z
+  result = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
 
 proc `cross`*[T](v1, v2: Vec3[T]): Vec3[T] {.inline.} =
   result = Vec3[T](
